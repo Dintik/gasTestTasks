@@ -1,5 +1,11 @@
 .App {
   text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  font-size: calc(10px + 2vmin);
 }
 
 .App-logo {
@@ -13,20 +19,11 @@
   }
 }
 
-.App-section {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-}
 
-.App-header {
+.App-header-wrap {
   font-size: calc(10px + 2vmin);
   display: flex;
   justify-content: center;
-  padding: 50px;
 }
 
 .App-header-text {
@@ -37,6 +34,7 @@
 .App-header-btn {
   font-size: calc(10px + 2vmin);
   margin: 20px;
+  padding: 30px;
 }
 
 .App-link {
