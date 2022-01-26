@@ -1,22 +1,24 @@
-import React, { useEffect, useCallback, useState } from "react";
+import React, { useEffect, useCallback } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setGasPrice } from "../../store/gasPrice/reducer";
-import { getStoreGasPrice } from "../../store/gasPrice/helpers";
+import { setGasPrice, setEthRate } from "../../store/prices/reducer";
+import { getStoreGasPrice, getStoreEthRate } from "../../store/prices/helpers";
 import styles from "./styles.module.scss";
 import { getGasPrice, getEthRate } from "../../helpers";
 
 const GasPrice = () => {
-    const gasPrice = useSelector(getStoreGasPrice);
+    const price = {
+        gas: useSelector(getStoreGasPrice),
+        eth: useSelector(getStoreEthRate),
+    };
     const dispatch = useDispatch();
-    const [ethPrice, setEthPrice] = useState(0);
 
     const refreshData = useCallback(async function () {
-        dispatch(setGasPrice("..."));
-        setEthPrice("...");
+        dispatch(setGasPrice("...")); // you can add for clarity
+        dispatch(setEthRate("...")); // you can add for clarity
         const gasPrice = await getGasPrice();
         const ethRate = await getEthRate();
         dispatch(setGasPrice(gasPrice));
-        setEthPrice(ethRate);
+        dispatch(setEthRate(ethRate));
     }, []);
 
     useEffect(() => {
@@ -25,14 +27,6 @@ const GasPrice = () => {
 
     return (
         <section className={styles.gasPrice}>
-            <div>
-                <p className={styles.gasPrice__text}>
-                    Gas price: {gasPrice} gwei
-                </p>
-                <p className={styles.gasPrice__text}>
-                    Exchange rate: {ethPrice}$
-                </p>
-            </div>
             <button
                 className={styles.gasPrice__btn}
                 type="button"
@@ -40,6 +34,14 @@ const GasPrice = () => {
             >
                 Refresh
             </button>
+            <div className={styles.gasPrice__text__wrap}>
+                <p className={styles.gasPrice__text}>
+                    Gas price: {price?.gas} gwei
+                </p>
+                <p className={styles.gasPrice__text}>
+                    Exchange rate: {price?.eth}$
+                </p>
+            </div>
         </section>
     );
 };
