@@ -1,19 +1,17 @@
-import logo from "./logo.svg";
-import { Counter } from "./features/counter/Counter";
-import { GasPrice } from "./features/gasPrice/GasPrice";
-import "./App.css";
+import React from "react";
+import { HomePage } from "./pages/home/home";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { Layout } from "./components/Layout/Layout";
 
 function App() {
     return (
-        <div className="App">
-            <header>
-                <GasPrice />
-            </header>
-            <section className="App-section">
-                <img src={logo} className="App-logo" alt="logo" />
-                <Counter />
-            </section>
-        </div>
+        <Router>
+            <Layout>
+                <Routes>
+                    <Route exact path="/" element={<HomePage />} />
+                </Routes>
+            </Layout>
+        </Router>
     );
 }
 

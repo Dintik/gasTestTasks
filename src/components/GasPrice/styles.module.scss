@@ -1,0 +1,19 @@
+.gasPrice {
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+
+    &__text {
+        font-size: calc(10px + 2vmin);
+        margin: 20px;
+    }
+
+    &__btn {
+        font-size: calc(10px + 2vmin);
+        margin: 20px;
+        padding: 30px;
+    }
+}

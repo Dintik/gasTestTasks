@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import counterReducer from "../features/counter/counterSlice";
-import gasPriceReducer from "../features/gasPrice/gasPriceGet";
+import counterReducer from "./gasPrice/reducer";
+import gasPriceReducer from "./gasPrice/reducer";
 
 export const store = configureStore({
     reducer: {

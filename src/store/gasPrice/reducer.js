@@ -17,6 +17,4 @@ export const gasPriceGet = createSlice({
 
 export const { setGasPrice } = gasPriceGet.actions;
 
-export const selectGasPrice = (state) => state.gasPrice.value;
-
 export default gasPriceGet.reducer;
