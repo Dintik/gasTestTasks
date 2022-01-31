@@ -5,7 +5,7 @@ import { getStoreGasPrice, getStoreEthRate } from "../../store/prices/helpers";
 import styles from "./styles.module.scss";
 import { getGasPrice, getEthRate } from "../../helpers";
 
-const GasPrice = () => {
+const GasPrice: React.FC = () => {
     const price = {
         gas: useSelector(getStoreGasPrice),
         eth: useSelector(getStoreEthRate),

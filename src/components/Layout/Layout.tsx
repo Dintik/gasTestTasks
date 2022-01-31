@@ -1,6 +1,6 @@
 import styles from "./styles.module.scss";
 
-export const Layout = ({ children }) => {
+export const Layout: React.FC = ({ children }) => {
     return (
         <div className={styles.layout}>
             {/* <Header /> */}

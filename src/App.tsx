@@ -3,7 +3,7 @@ import { HomePage } from "./pages/home/home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Layout } from "./components/Layout/Layout";
 
-function App() {
+const App: React.FC = () => {
     return (
         <Router>
             <Layout>
@@ -13,6 +13,6 @@ function App() {
             </Layout>
         </Router>
     );
-}
+};
 
 export default App;
