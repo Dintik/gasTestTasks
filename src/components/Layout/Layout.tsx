@@ -1,10 +1,14 @@
 import styles from "./styles.module.scss";
 
-export const Layout: React.FC = ({ children }) => {
+interface IProps {
+    children: React.ReactNode;
+}
+
+export const Layout: React.FC<IProps> = (props: IProps) => {
     return (
         <div className={styles.layout}>
             {/* <Header /> */}
-            {children}
+            {props.children}
             {/* <Footer /> */}
         </div>
     );

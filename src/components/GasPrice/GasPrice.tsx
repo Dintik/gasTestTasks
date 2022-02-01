@@ -1,25 +1,24 @@
 import React, { useEffect, useCallback } from "react";
-import { useSelector, useDispatch } from "react-redux";
+import { useAppSelector, useAppDispatch } from "../../store/hooks";
 import { setGasPrice, setEthRate } from "../../store/prices/reducer";
-import { getStoreGasPrice, getStoreEthRate } from "../../store/prices/helpers";
 import styles from "./styles.module.scss";
-import { getGasPrice, getEthRate } from "../../helpers";
-import { IPrice } from "../../interfaces";
+import { getEthRate } from "../../api/getEthRate";
+import { getGasPrice } from "../../web3/utils";
+import { IPrice } from "./interfaces";
 
 const GasPrice: React.FC = () => {
-    const price: IPrice = {
-        gas: useSelector(getStoreGasPrice),
-        eth: useSelector(getStoreEthRate)
-    };
-    const dispatch = useDispatch();
+    const price: IPrice = useAppSelector((state) => state.prices);
+    const dispatch = useAppDispatch();
 
     const refreshData = useCallback(async function () {
         dispatch(setGasPrice("...")); // you can add for clarity
         dispatch(setEthRate("...")); // you can add for clarity
-        const gasPrice = await getGasPrice();
-        const ethRate = await getEthRate();
-        dispatch(setGasPrice(gasPrice));
-        dispatch(setEthRate(ethRate));
+        const curentprice: IPrice = {
+            gasPrice: await getGasPrice(),
+            ethRate: await getEthRate()
+        };
+        dispatch(setGasPrice(curentprice.gasPrice));
+        dispatch(setEthRate(curentprice.ethRate));
     }, []);
 
     useEffect(() => {
@@ -32,8 +31,8 @@ const GasPrice: React.FC = () => {
                 Refresh
             </button>
             <div className={styles.gasPrice__text__wrap}>
-                <p className={styles.gasPrice__text}>Gas price: {price.gas} gwei</p>
-                <p className={styles.gasPrice__text}>Exchange rate: {price.eth}$</p>
+                <p className={styles.gasPrice__text}>Gas price: {price.gasPrice} gwei</p>
+                <p className={styles.gasPrice__text}>Exchange rate: {price.ethRate}$</p>
             </div>
         </section>
     );

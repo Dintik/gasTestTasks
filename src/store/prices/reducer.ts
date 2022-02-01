@@ -1,29 +1,28 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 type GasStateTypes = {
-    gasPrice: any;
-    ethRate: any;
+    gasPrice: string,
+    ethRate: string
 };
 
 const initialState: GasStateTypes = {
     gasPrice: "0",
-    ethRate: "0",
+    ethRate: "0"
 };
 
 const priceSlice = createSlice({
     name: "price",
     initialState,
     reducers: {
-        setGasPrice: (state, action) => {
+        setGasPrice: (state, action: PayloadAction<string>) => {
             state.gasPrice = action.payload;
         },
-        setEthRate: (state, action) => {
+        setEthRate: (state, action: PayloadAction<string>) => {
             state.ethRate = action.payload;
         },
     },
 });
 
-export const { setGasPrice } = priceSlice.actions;
-export const { setEthRate } = priceSlice.actions;
+export const { setGasPrice, setEthRate } = priceSlice.actions;
 
 export default priceSlice.reducer;

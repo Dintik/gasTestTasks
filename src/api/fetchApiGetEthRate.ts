@@ -1,6 +1,6 @@
-export const getEthPriceUsd = async () => {
+export const getEthRateUsd = async () => {
     try {
-        const resp = await fetch(
+        const resp: Response = await fetch(
             "https://api.coingecko.com/api/v3/simple/price?ids=ethereum&vs_currencies=usd",
             {
                 method: "GET",
