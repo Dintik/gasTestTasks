@@ -8,7 +8,7 @@ import { getGasPrice, getEthRate } from "../../helpers";
 const GasPrice: React.FC = () => {
     const price = {
         gas: useSelector(getStoreGasPrice),
-        eth: useSelector(getStoreEthRate),
+        eth: useSelector(getStoreEthRate)
     };
     const dispatch = useDispatch();
 
@@ -27,20 +27,12 @@ const GasPrice: React.FC = () => {
 
     return (
         <section className={styles.gasPrice}>
-            <button
-                className={styles.gasPrice__btn}
-                type="button"
-                onClick={refreshData}
-            >
+            <button className={styles.gasPrice__btn} type="button" onClick={refreshData}>
                 Refresh
             </button>
             <div className={styles.gasPrice__text__wrap}>
-                <p className={styles.gasPrice__text}>
-                    Gas price: {price?.gas} gwei
-                </p>
-                <p className={styles.gasPrice__text}>
-                    Exchange rate: {price?.eth}$
-                </p>
+                <p className={styles.gasPrice__text}>Gas price: {price?.gas} gwei</p>
+                <p className={styles.gasPrice__text}>Exchange rate: {price?.eth}$</p>
             </div>
         </section>
     );

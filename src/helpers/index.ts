@@ -12,8 +12,11 @@ export const getGasPrice = async () => {
 };
 
 export const getEthRate = async () => {
-    const ethPriceUsd = await getEthPriceUsd();
-    if (ethPriceUsd && ethPriceUsd.ethereum.usd) {
-        return ethPriceUsd.ethereum.usd;
-    } else return "Sorry, an error occurred while receiving the rate ";
+    const resp = await getEthPriceUsd();
+    if (!resp.isError && resp.dataPrice) {
+        return resp.dataPrice;
+    }
+    else {
+        return "Sorry, an error occurred while receiving the rate ";
+    }
 };
