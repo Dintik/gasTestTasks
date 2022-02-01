@@ -4,9 +4,10 @@ import { setGasPrice, setEthRate } from "../../store/prices/reducer";
 import { getStoreGasPrice, getStoreEthRate } from "../../store/prices/helpers";
 import styles from "./styles.module.scss";
 import { getGasPrice, getEthRate } from "../../helpers";
+import { IPrice } from "../../interfaces";
 
 const GasPrice: React.FC = () => {
-    const price = {
+    const price: IPrice = {
         gas: useSelector(getStoreGasPrice),
         eth: useSelector(getStoreEthRate)
     };
@@ -31,8 +32,8 @@ const GasPrice: React.FC = () => {
                 Refresh
             </button>
             <div className={styles.gasPrice__text__wrap}>
-                <p className={styles.gasPrice__text}>Gas price: {price?.gas} gwei</p>
-                <p className={styles.gasPrice__text}>Exchange rate: {price?.eth}$</p>
+                <p className={styles.gasPrice__text}>Gas price: {price.gas} gwei</p>
+                <p className={styles.gasPrice__text}>Exchange rate: {price.eth}$</p>
             </div>
         </section>
     );

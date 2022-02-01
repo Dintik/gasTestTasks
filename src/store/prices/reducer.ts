@@ -1,11 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type CuratedGasStateTypes = {
+type GasStateTypes = {
     gasPrice: any;
     ethRate: any;
 };
 
-const initialState: CuratedGasStateTypes = {
+const initialState: GasStateTypes = {
     gasPrice: "0",
     ethRate: "0",
 };
