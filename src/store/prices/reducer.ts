@@ -6,8 +6,8 @@ type CuratedGasStateTypes = {
 };
 
 const initialState: CuratedGasStateTypes = {
-    gasPrice: null,
-    ethRate: null,
+    gasPrice: "0",
+    ethRate: "0",
 };
 
 const priceSlice = createSlice({
