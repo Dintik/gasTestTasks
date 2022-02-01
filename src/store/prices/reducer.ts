@@ -1,8 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState = {
-    gasPrice: 0,
-    ethRate: 0,
+type CuratedGasStateTypes = {
+    gasPrice: any;
+    ethRate: any;
+};
+
+const initialState: CuratedGasStateTypes = {
+    gasPrice: null,
+    ethRate: null,
 };
 
 const priceSlice = createSlice({

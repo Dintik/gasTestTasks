@@ -1,2 +1,2 @@
-export const getStoreGasPrice = (state) => state.prices.gasPrice;
-export const getStoreEthRate = (state) => state.prices.ethRate;
+export const getStoreGasPrice = (state: any) => state.prices.gasPrice;
+export const getStoreEthRate = (state: any) => state.prices.ethRate;
