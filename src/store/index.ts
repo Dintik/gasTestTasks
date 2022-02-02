@@ -3,7 +3,7 @@ import pricesReducer from "./prices/reducer";
 
 export const store = configureStore({
     reducer: {
-        prices: pricesReducer,
+        pricesState: pricesReducer,
     },
 });
 

@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Gas Price should render correctly without data 1`] = `
+<DocumentFragment>
+  <section
+    class="gasPrice"
+  >
+    <button
+      class="gasPrice__btn"
+      type="button"
+    >
+      Refresh
+    </button>
+    <div
+      class="gasPrice__text__wrap"
+    >
+      <p
+        class="gasPrice__text"
+      >
+        Gas price: Sorry, there was an error gwei
+      </p>
+      <p
+        class="gasPrice__text"
+      >
+        Exchange rate: Sorry, there was an error$
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Gas Price should render data 1`] = `
+<DocumentFragment>
+  <section
+    class="gasPrice"
+  >
+    <button
+      class="gasPrice__btn"
+      type="button"
+    >
+      Refresh
+    </button>
+    <div
+      class="gasPrice__text__wrap"
+    >
+      <p
+        class="gasPrice__text"
+      >
+        Gas price: 154.788 gwei
+      </p>
+      <p
+        class="gasPrice__text"
+      >
+        Exchange rate: 2697.51$
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;
+
+exports[`Gas Price should render loading 1`] = `
+<DocumentFragment>
+  <section
+    class="gasPrice"
+  >
+    <button
+      class="gasPrice__btn"
+      type="button"
+    >
+      Refresh
+    </button>
+    <div
+      class="gasPrice__text__wrap"
+    >
+      <p
+        class="gasPrice__text"
+      >
+        Gas price: Loading...
+      </p>
+      <p
+        class="gasPrice__text"
+      >
+        Exchange rate: Loading...
+      </p>
+    </div>
+  </section>
+</DocumentFragment>
+`;

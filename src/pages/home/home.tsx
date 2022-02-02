@@ -1,4 +1,4 @@
-import GasPrice from "../../components/GasPrice/GasPrice";
+import GasPrice from "../../components/GasPrice";
 
 export const HomePage = () => {
     return (

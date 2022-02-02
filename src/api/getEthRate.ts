@@ -1,11 +1,13 @@
-import { getEthRateUsd } from "./fetchApiGetEthRate";
+import { fetchApiGetEthRate } from "./fetchApiGetEthRate";
 
 export const getEthRate = async () => {
-    const resp = await getEthRateUsd();
-    if (!resp.isError && resp.dataPrice) {
-        return (resp.dataPrice).toString();
+    const resp = await fetchApiGetEthRate();
+    
+    if (!resp.isError && resp?.data?.ethereum?.usd) {
+        const ethRate = resp.data.ethereum.usd;
+        return (ethRate).toString();
     }
     else {
-        return "Sorry, an error occurred while receiving the rate ";
+        return "Sorry, there was an error";
     }
 };
