@@ -2,7 +2,7 @@ import thunk from "redux-thunk";
 import configureMockStore from "redux-mock-store";
 import { Provider } from "react-redux";
 import { render } from "@testing-library/react";
-import GasPrice from "../index";
+import EthRate from "../index";
 const mockStore = configureMockStore([thunk]);
 
 describe("Gas Price", () => {
@@ -18,7 +18,7 @@ describe("Gas Price", () => {
 
         const { asFragment } = render(
             <Provider store={store}>
-                <GasPrice />
+                <EthRate />
             </Provider>
         );
 
@@ -37,7 +37,7 @@ describe("Gas Price", () => {
 
         const { asFragment } = render(
             <Provider store={store}>
-                <GasPrice />
+                <EthRate />
             </Provider>
         );
 
@@ -56,7 +56,7 @@ describe("Gas Price", () => {
 
         const { asFragment } = render(
             <Provider store={store}>
-                <GasPrice />
+                <EthRate />
             </Provider>
         );
 

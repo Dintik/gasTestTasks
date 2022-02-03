@@ -18,8 +18,10 @@ const priceSlice = createSlice({
     name: "price",
     initialState,
     reducers: {
-        setLoading: (state) => {
+        setLoadingGas: (state) => {
             state.isLoadingGas = true;
+        },
+        setLoadingEth: (state) => {
             state.isLoadingEth = true;
         },
         setGasPrice: (state, action: PayloadAction<string>) => {
@@ -33,6 +35,6 @@ const priceSlice = createSlice({
     },
 });
 
-export const { setGasPrice, setEthRate, setLoading } = priceSlice.actions;
+export const { setGasPrice, setEthRate, setLoadingGas, setLoadingEth } = priceSlice.actions;
 
 export default priceSlice.reducer;

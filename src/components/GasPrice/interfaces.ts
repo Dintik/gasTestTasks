@@ -1,6 +1,4 @@
-export interface IPrice {
+export interface IPriceGas {
     gasPrice: null | string,
-    ethRate: null | string,
     isLoadingGas?: boolean,
-    isLoadingEth?: boolean,
 };
